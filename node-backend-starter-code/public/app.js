@@ -21,12 +21,10 @@ window.addEventListener('load', () => {
 
         const title = document.createElement('h3');
         title.innerHTML = movieList.Title;
-        // title.classList.add("text-center")
         appendMovies.appendChild(title);
 
         const poster = document.createElement('img');
         poster.src = movieList.Poster;
-        // poster.classList.add("text-center")
         appendMovies.appendChild(poster);
 
         const favoriteButton = document.createElement('button');
@@ -37,7 +35,7 @@ window.addEventListener('load', () => {
         document.querySelector('#search').value = "";
 
         favoriteButton.addEventListener('click', () => {
-          
+
           axios.post(baseURL, movieList).then(response => {
             console.log(response)
           });
